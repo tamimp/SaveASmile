@@ -1,0 +1,93 @@
+@import "/src/Styles/Partials/mixins.scss";
+@import "/src/Styles/Partials/variables.scss";
+
+.photos-page {
+  padding-left: 20vw;
+  position: relative;
+  height: 100vh;
+
+  @include tablet {
+    padding-left: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 2rem; 
+    justify-items: center; 
+  }
+
+  &__photo-card {
+    position: absolute;
+    margin-left: -5rem;
+    margin-top: 2rem;
+    width: 18rem;
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $card-color;
+    box-shadow:
+      inset 0 2px 4px rgba(0, 0, 0, 0.1),
+      inset 0 4px 6px rgba(0, 0, 0, 0.05),
+      0 4px 6px rgba(0, 0, 0, 0.1),
+      0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+
+    border-bottom-right-radius: 0;
+    &.active {
+      border-bottom-right-radius: 1rem;
+    }
+
+    &:hover {
+      transform: translateY(-5px); // Slight lift on hover
+    }
+  }
+
+  &__poster {
+    margin-top: .5rem;
+    max-width: 16.5rem;
+    max-height: 12rem;
+  }
+
+  &__photo-title {
+    @include handwriting;
+    font-size: 1.5rem;
+    color: $header-bg;
+    padding: 0.5rem;
+    margin: 0;
+  }
+
+  &__photo-date{
+    @include handwriting;
+    font-size: 1.5rem;
+    color: $header-bg;
+    padding: 0.5rem;
+    margin: 0;
+  }
+
+  &__shuffle-button {
+   @include buttons;
+}
+
+.photos-page__delete-button {
+  position: absolute;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  border: none;
+  background-color: $card-color;
+  width: 1.875rem;
+  height: 1.875rem;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: $main-color;
+  transition: background 0.3s;
+
+  &:hover {
+    color: $error;
+  }
+}
+}

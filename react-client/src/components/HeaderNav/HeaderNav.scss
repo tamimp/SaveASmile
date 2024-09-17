@@ -1,0 +1,63 @@
+@use "/src/Styles/Partials/variables.scss" as *;
+@use "/src/Styles/Partials/mixins.scss" as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $header-bg;
+  border-bottom: 0.25rem solid $dividers;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  p {
+    @include no-spaces;
+    font-style: italic;
+    color: $dividers;
+    align-self: center; 
+    text-align: center; 
+    margin: 0;
+    padding: .25rem 0;
+    @include handwriting;
+    font-weight: 300;
+    font-size: 1.5rem;
+    @include tablet {
+    display: none;
+    }
+  }
+
+  img {
+    width: 75vw;
+    max-width: 25rem;
+    padding: 1rem;
+    padding-bottom: 0;
+
+    @include tablet {
+      padding: 1rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    background-color: $header-button;
+    width: 100%;
+    padding: .5rem;
+    
+
+    @include tablet {
+      flex-direction: column;
+      padding: 1.5rem 0;
+      border-left: 0.25rem solid $dividers;
+      padding: .25rem;
+    }
+
+    button {
+      @include buttons;
+    }
+  }
+}

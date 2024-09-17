@@ -1,0 +1,25 @@
+@import "/src/Styles/Partials/variables.scss";
+@import "/src/Styles/Partials/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+
+/* Box-sizing border-box */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+    
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    color: $main-color;
+    background-color: $main-bg;
+    background-image: url('Assets/Images/BG-texture.jpg');
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+
+}

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+  
+  @mixin flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  @mixin reset-list {
+      list-style: none;
+      text-decoration: none;
+  }
+  
+  @mixin no-spaces{
+      margin: 0;
+      padding: 0;
+  }
+   
+  @mixin buttons{
+    border: none;
+    padding: .25rem .75rem;
+    background-color: rgb(3, 3, 57);
+    color: #f3dea7;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    margin: 0 .5rem;
+
+    @include tablet{
+      margin: .5rem;
+    }
+
+    &:hover{
+      scale: 1.1;
+      border-right: .2rem solid #cea131;
+      border-bottom: .2rem solid #cea131;
+      cursor: pointer;
+    }
+}
+
+@mixin handwriting{
+    font-family: 'Caveat', cursive;
+    font-size: 1.25rem;
+}
+
+@mixin main-font{
+    font-family: 'Quicksand', sans-serif;
+}

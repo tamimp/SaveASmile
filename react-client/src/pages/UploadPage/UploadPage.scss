@@ -1,0 +1,71 @@
+@import "/src/Styles/Partials/variables.scss";
+@import "/src/Styles/Partials/mixins.scss";
+
+.upload-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $card-color;
+  width: 22rem;
+  height: 30rem;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 4px 6px rgba(0, 0, 0, 0.05),
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 8px 15px rgba(0, 0, 0, 0.1);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .upload-page__thumbnail {
+      max-height: 13rem;
+      max-width: 20rem;
+      height: auto;
+      margin: 0;
+      border: 1px solid $dividers;
+      object-fit: cover;
+    }
+
+    .upload-page__file-input {
+      font-family: 'Arial', sans-serif;
+      font-size: .75rem;
+      margin: .5rem;
+    }
+
+    .upload-page__title-input {
+      width: 100%;
+      max-width: 20rem;
+      padding: $spacing-small;
+      border-radius: .25rem;
+      font-size: 1.25rem;
+      border: 1px solid $dividers;
+      box-sizing: border-box;
+      margin-bottom: $spacing-medium;
+    }
+
+    .upload-page__button-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: $spacing-medium 0;
+
+      .upload-page__button {
+       @include buttons;
+       width: 7rem;
+       font-size: 1rem;
+      }
+    }
+  }
+
+  .upload-page__status {
+    margin-top: -1rem;
+    color: $header-bg;
+    font-size: 1rem;
+  }
+}
