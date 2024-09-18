@@ -27,6 +27,13 @@ function PhotosPage() {
     getPhotos();
   }, [baseUrl]);
 
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    date.setDate(date.getDate() + 1); // Adjust date by adding one day
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  };
+
   const handleDeleteClick = (id) => {
     setPhotoToDelete(id);
     setIsModalOpen(true);
@@ -93,7 +100,7 @@ function PhotosPage() {
                 />
                 <h2 className="photos-page__photo-title">{photo.title}</h2>
                 <p className="photos-page__photo-date">
-                  {new Date(photo.timestamp).toLocaleDateString()}
+                  {formatDate(photo.timestamp)}
                 </p>
                 <button
                   className="photos-page__delete-button"

@@ -40,7 +40,6 @@
 
     }
     .upload-page__file-input {
-      font-family: 'Arial', sans-serif;
       font-size: .75rem;
       margin: .5rem 0;
       width: 11rem;
@@ -51,6 +50,8 @@
     }
 
     .upload-page__title-input {
+      font-family: "quicksand";
+      font-weight: 600;
       width: 100%;
       max-width: 19.5rem;
       height: 8rem;
@@ -77,8 +78,21 @@
   }
 
   .upload-page__status {
-    margin-top: -4.5rem;
     color: $header-bg;
     font-size: 1rem;
+
+    &.error {
+      color: $error;
+    }
+  }
+
+  .upload-page__charCount{
+    color: grey;
+    margin-top: -3.5rem;
+    margin-left: 15rem;
+
+    &.error {
+      color: $error;
+    }
   }
 }

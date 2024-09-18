@@ -23,6 +23,13 @@ function GalleryPage() {
     getPhotos();
   }, [baseUrl]);
 
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    date.setDate(date.getDate() + 1); // Adjust date by adding one day
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  };
+
   const handleDeleteClick = (id) => {
     setPhotoToDelete(id);
     setIsModalOpen(true);
@@ -48,8 +55,8 @@ function GalleryPage() {
       <h1 className="gallery-page__title">Gallery</h1>
       <div className="gallery-page__grid">
         {photos
-          .slice() // Create a shallow copy of the photos array
-          .reverse() // Reverse the copied array
+          .slice()
+          .reverse()
           .map((photo) => (
             <div key={photo.id} className="gallery-page__photo-card">
               <img
@@ -59,7 +66,7 @@ function GalleryPage() {
               />
               <h2 className="gallery-page__photo-title">{photo.title}</h2>
               <p className="gallery-page__photo-date">
-                {new Date(photo.timestamp).toLocaleDateString()}
+                {formatDate(photo.timestamp)}
               </p>
               <button
                 className="gallery-page__delete-button"

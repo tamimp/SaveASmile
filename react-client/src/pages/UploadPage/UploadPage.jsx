@@ -11,6 +11,7 @@ function UploadPage() {
   const [uploadStatus, setUploadStatus] = useState("");
   const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [charCount, setCharCount] = useState(0);
   const navigate = useNavigate();
 
   const baseUrl = import.meta.env.VITE_API_URL;
@@ -22,12 +23,7 @@ function UploadPage() {
 
   const handleTitleChange = (event) => {
     const newTitle = event.target.value;
-
-    if (newTitle.length > 100) {
-      alert("Title exceeds 100 characters. Please shorten it.");
-      return;
-    }
-
+    setCharCount(newTitle.length);
     setTitle(newTitle);
   };
 
@@ -40,6 +36,10 @@ function UploadPage() {
 
     if (!title || !selectedFile || !date) {
       setUploadStatus("Looks like you're missing something.");
+      return;
+    }
+    if (title.length > 100) {
+      setUploadStatus("Title exceeds 100 characters. Please shorten it.");
       return;
     }
 
@@ -111,6 +111,14 @@ function UploadPage() {
           className="upload-page__title-input"
           maxLength="100"
         />
+        <p
+          className={`upload-page__charCount ${
+            charCount === 100 ? "error" : ""
+          }`}
+        >
+          {charCount}/100
+        </p>
+
         <div className="upload-page__button-group">
           <button type="submit" className="upload-page__button">
             Add Photo
