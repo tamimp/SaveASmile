@@ -95,7 +95,7 @@ function PhotosPage() {
               >
                 <img
                   src={`${baseUrl}/${photo.image}`}
-                  alt={photo.title}
+                  alt={`Photo, with description: ${photo.title}`}
                   className="photos-page__poster"
                 />
                 <h2 className="photos-page__photo-title">{photo.title}</h2>

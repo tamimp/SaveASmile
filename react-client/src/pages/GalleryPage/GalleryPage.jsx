@@ -61,7 +61,7 @@ function GalleryPage() {
             <div key={photo.id} className="gallery-page__photo-card">
               <img
                 src={`${baseUrl}/${photo.image}`}
-                alt={photo.title}
+                alt={`Photo, with description: ${photo.title}`}
                 className="gallery-page__poster"
               />
               <h2 className="gallery-page__photo-title">{photo.title}</h2>
