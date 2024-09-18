@@ -32,15 +32,28 @@
       object-fit: cover;
     }
 
+    .upload-page__top{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: .5rem;
+
+    }
     .upload-page__file-input {
       font-family: 'Arial', sans-serif;
       font-size: .75rem;
-      margin: .5rem;
+      margin: .5rem 0;
+      width: 11rem;
+    }
+
+    .upload-page__date-input {
+      height: 1.2rem;
     }
 
     .upload-page__title-input {
       width: 100%;
-      max-width: 20rem;
+      max-width: 19.5rem;
+      height: 8rem;
       padding: $spacing-small;
       border-radius: .25rem;
       font-size: 1.25rem;
@@ -53,7 +66,7 @@
       display: flex;
       justify-content: center;
       gap: 1rem;
-      padding: $spacing-medium 0;
+      padding:0;
 
       .upload-page__button {
        @include buttons;
@@ -64,7 +77,7 @@
   }
 
   .upload-page__status {
-    margin-top: -1rem;
+    margin-top: -4.5rem;
     color: $header-bg;
     font-size: 1rem;
   }

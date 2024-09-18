@@ -8,6 +8,7 @@ function UploadPage() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [title, setTitle] = useState("");
   const [uploadStatus, setUploadStatus] = useState("");
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]); // Default to today's date
   const navigate = useNavigate();
 
   const baseUrl = import.meta.env.VITE_API_URL;
@@ -28,10 +29,14 @@ function UploadPage() {
     setTitle(newTitle);
   };
 
+  const handleDateChange = (event) => {
+    setDate(event.target.value);
+  };
+
   const handlePhotoSubmit = async (event) => {
     event.preventDefault();
 
-    if (!title || !selectedFile) {
+    if (!title || !selectedFile || !date) {
       setUploadStatus("Looks like you're missing something.");
       return;
     }
@@ -39,6 +44,7 @@ function UploadPage() {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("poster", selectedFile);
+    formData.append("date", date); // Add the date to the form data
 
     try {
       const response = await axios.post(`${baseUrl}/photos`, formData, {
@@ -49,6 +55,7 @@ function UploadPage() {
       setUploadStatus("Photo uploaded successfully!");
       setTitle("");
       setSelectedFile(null);
+      setDate(new Date().toISOString().split("T")[0]); // Reset to today's date
     } catch (error) {
       console.error("Error uploading photo:", error);
       setUploadStatus("Error uploading photo. Please try again.");
@@ -69,19 +76,27 @@ function UploadPage() {
           alt="Preview"
           className="upload-page__thumbnail"
         />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          className="upload-page__file-input"
-        />
+        <div className="upload-page__top">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            className="upload-page__file-input"
+          />
+          <input
+            type="date"
+            value={date}
+            onChange={handleDateChange}
+            className="upload-page__date-input"
+          />
+        </div>
         <input
           type="text"
           placeholder="What made you smile today?"
           value={title}
           onChange={handleTitleChange}
           className="upload-page__title-input"
-          maxLength="100" // Add this line
+          maxLength="100"
         />
         <div className="upload-page__button-group">
           <button type="submit" className="upload-page__button">
