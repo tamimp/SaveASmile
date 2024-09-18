@@ -78,12 +78,9 @@
   }
 
   .upload-page__status {
-    color: $header-bg;
+    color: $error;
+    margin: -.02rem;
     font-size: 1rem;
-
-    &.error {
-      color: $error;
-    }
   }
 
   .upload-page__charCount{

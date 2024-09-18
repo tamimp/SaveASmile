@@ -38,10 +38,6 @@ function UploadPage() {
       setUploadStatus("Looks like you're missing something.");
       return;
     }
-    if (title.length > 100) {
-      setUploadStatus("Title exceeds 100 characters. Please shorten it.");
-      return;
-    }
 
     const formData = new FormData();
     formData.append("title", title);
@@ -54,7 +50,6 @@ function UploadPage() {
           "Content-Type": "multipart/form-data",
         },
       });
-      setUploadStatus("Photo uploaded successfully!");
       setIsModalOpen(true);
     } catch (error) {
       console.error("Error uploading photo:", error);
