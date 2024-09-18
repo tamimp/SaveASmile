@@ -1,0 +1,20 @@
+@import "/src/Styles/Partials/variables.scss";
+@import "/src/Styles/Partials/mixins.scss";
+
+.footer {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: $header-bg;   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);       
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+  
+    @include tablet {
+        display: block;
+      font-size: 12px;
+    }
+  }
+  

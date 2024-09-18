@@ -64,30 +64,6 @@
     color: $header-bg;
     padding: 0.5rem;
     margin: 0;
-  }
-
-  &__shuffle-button {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-                0 8px 15px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 28rem;
-    left: 33vw;
-    z-index: 1000000000;
-    scale: 1.2;
-   @include buttons;
-   &:hover {
-    scale: 1.3;
-  }
-
-   @include tablet {
-    left: 42vw;
-    top: 29rem;
-    scale: 1.5;
-
-    &:hover {
-      scale: 1.6;
-    }
-   }
 }
 
 .photos-page__delete-button {
@@ -110,4 +86,36 @@
     color: $error;
   }
 }
+}
+
+.photos-page__shuffle-button {
+  position: fixed;
+  bottom: 2rem;   
+  left: 50%;   
+  transform: translateX(-50%); 
+  z-index: 1000;
+  scale: 1.2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 15px rgba(0, 0, 0, 0.1);
+  
+  @include buttons;
+  &:hover {
+    scale: 1.3;
+  }
+
+  @include tablet {
+    scale: 1.5;
+    bottom: 2rem; 
+
+    &:hover {
+      scale: 1.6;
+    }
+  }
+  @include desktop {
+    scale: 1.5;
+    bottom: 5rem; 
+
+    &:hover {
+      scale: 1.6;
+    }
+  }
 }

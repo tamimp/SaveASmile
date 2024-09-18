@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import UploadModal from "../../components/UploadModal/UploadModal";
 import "./UploadPage.scss";
 import placeholderImage from "../../Assets/Images/Upload-video-preview.jpg";
 
@@ -8,7 +9,8 @@ function UploadPage() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [title, setTitle] = useState("");
   const [uploadStatus, setUploadStatus] = useState("");
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0]); // Default to today's date
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const baseUrl = import.meta.env.VITE_API_URL;
@@ -44,7 +46,7 @@ function UploadPage() {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("poster", selectedFile);
-    formData.append("date", date); // Add the date to the form data
+    formData.append("date", date);
 
     try {
       const response = await axios.post(`${baseUrl}/photos`, formData, {
@@ -53,9 +55,7 @@ function UploadPage() {
         },
       });
       setUploadStatus("Photo uploaded successfully!");
-      setTitle("");
-      setSelectedFile(null);
-      setDate(new Date().toISOString().split("T")[0]); // Reset to today's date
+      setIsModalOpen(true);
     } catch (error) {
       console.error("Error uploading photo:", error);
       setUploadStatus("Error uploading photo. Please try again.");
@@ -63,7 +63,20 @@ function UploadPage() {
   };
 
   const handleCancel = () => {
-    navigate("/"); // Redirect to the homepage
+    navigate("/");
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    navigate("/");
+  };
+
+  const handleUploadAnother = () => {
+    setIsModalOpen(false);
+    setTitle("");
+    setSelectedFile(null);
+    setDate(new Date().toISOString().split("T")[0]);
+    setUploadStatus("");
   };
 
   return (
@@ -112,6 +125,14 @@ function UploadPage() {
         </div>
       </form>
       {uploadStatus && <p className="upload-page__status">{uploadStatus}</p>}
+
+      {isModalOpen && (
+        <UploadModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          onUploadAnother={handleUploadAnother}
+        />
+      )}
     </div>
   );
 }
