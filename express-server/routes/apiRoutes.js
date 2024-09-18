@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
     cb(null, "./public");
   },
   filename: (req, file, cb) => {
-    cb(null, file.originalname); // Use the original name of the file
+    cb(null, file.originalname);
   },
 });
 
@@ -38,12 +38,13 @@ router.get("/photos/:id", (req, res) => {
 router.post("/photos", upload.single("poster"), (req, res) => {
   console.log(req.file);
   const photosData = JSON.parse(fs.readFileSync("./data/photos.json", "utf8"));
+  const photoDate = req.body.date ? req.body.date : new Date().toISOString();
 
   const newPhoto = {
     id: uuidv4(),
     title: req.body.title,
     image: req.file.originalname,
-    timestamp: new Date().toISOString(), // Add timestamp
+    timestamp: photoDate,
     reviews: [],
   };
 
@@ -70,7 +71,6 @@ router.delete("/photos/:id", (req, res) => {
 
   fs.writeFileSync(photosPath, JSON.stringify(updatedPhotos));
 
-  // Optionally delete the photo file from the server's file system
   const photoToDelete = photosData.find((photo) => photo.id === req.params.id);
   if (photoToDelete) {
     fs.unlink(`./public/${photoToDelete.image}`, (err) => {

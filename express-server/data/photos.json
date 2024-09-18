@@ -4,5 +4,19 @@
     "title": "This is a Sample Photo. Delete me when you're ready!",
     "image": "Y17_TAJ-183.jpg",
     "timestamp": "2024-09-15T20:46:30Z"
+  },
+  {
+    "id": "15e9030e-6fd6-4da7-ba5c-df2a8fe0d310",
+    "title": "Made a nice salad!",
+    "image": "image2.jpg",
+    "timestamp": "2024-09-18",
+    "reviews": []
+  },
+  {
+    "id": "9938d023-e1e6-4df6-bf1e-0adeb9c963e4",
+    "title": "Had a nice time camping!",
+    "image": "1713458900923-outdoor-3681924_1280.jpg",
+    "timestamp": "2024-09-18",
+    "reviews": []
   }
 ]
