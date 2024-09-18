@@ -45,7 +45,6 @@ router.post("/photos", upload.single("poster"), (req, res) => {
     title: req.body.title,
     image: req.file.originalname,
     timestamp: photoDate,
-    reviews: [],
   };
 
   photosData.push(newPhoto);
