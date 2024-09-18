@@ -8,7 +8,7 @@ function PhotosPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [photoToDelete, setPhotoToDelete] = useState(null);
   const [shuffleKey, setShuffleKey] = useState(0);
-  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const [isLoading, setIsLoading] = useState(true);
 
   const baseUrl = import.meta.env.VITE_API_URL;
 
@@ -20,7 +20,7 @@ function PhotosPage() {
       } catch (error) {
         console.error("Error fetching photos:", error);
       } finally {
-        setIsLoading(false); // Set loading to false after fetch
+        setIsLoading(false);
       }
     };
 
@@ -29,7 +29,7 @@ function PhotosPage() {
 
   const formatDate = (timestamp) => {
     const date = new Date(timestamp);
-    date.setDate(date.getDate() + 1); // Adjust date by adding one day
+    date.setDate(date.getDate() + 1);
     const options = { year: "numeric", month: "short", day: "numeric" };
     return date.toLocaleDateString("en-US", options);
   };

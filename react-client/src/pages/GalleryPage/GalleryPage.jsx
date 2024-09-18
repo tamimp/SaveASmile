@@ -25,7 +25,7 @@ function GalleryPage() {
 
   const formatDate = (timestamp) => {
     const date = new Date(timestamp);
-    date.setDate(date.getDate() + 1); // Adjust date by adding one day
+    date.setDate(date.getDate() + 1);
     const options = { year: "numeric", month: "short", day: "numeric" };
     return date.toLocaleDateString("en-US", options);
   };

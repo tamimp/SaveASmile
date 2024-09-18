@@ -1,0 +1,52 @@
+@import "/src/Styles/Partials/mixins.scss";
+@import "/src/Styles/Partials/variables.scss";
+
+.modal-overlay {
+  position: fixed;
+  z-index: 1000000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: $spacing-medium;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  button {
+    margin: $spacing-small;
+    padding: $spacing-small $spacing-medium;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    background: $confirm;
+    color: $main-bg;
+
+    &:hover {
+      background: darken($confirm, 10%);
+    }
+
+    &:last-child {
+      background: $error;
+
+      &:hover {
+        background: darken($error, 10%);
+      }
+    }
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: $spacing-medium;
+  }
+}

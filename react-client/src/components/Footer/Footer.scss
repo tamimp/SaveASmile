@@ -2,7 +2,7 @@
 @import "/src/Styles/Partials/mixins.scss";
 
 .footer {
-    display: none;
+    // display: none;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -10,7 +10,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);       
     text-align: center;
     padding: 10px 0;
-    font-size: 14px;
+    font-size: 10px;
   
     @include tablet {
         display: block;
