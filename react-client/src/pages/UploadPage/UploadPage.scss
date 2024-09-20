@@ -40,14 +40,41 @@
 
     }
     .upload-page__file-input {
-      font-size: .75rem;
-      margin: .5rem 0;
-      width: 11rem;
+      @include buttons;
+      width: 9rem;
+      height: 2rem;
+      margin: .25rem;
+
+      &::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+
+      &::before {
+        content: 'Choose File';
+        @include buttons;
+        cursor: pointer;
+      }
     }
 
     .upload-page__date-input {
-      height: 1.2rem;
+      height: 2rem;
+      @include buttons;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    
+      &::-webkit-calendar-picker-indicator {
+        color: $primary-text-light;
+        background-color: $primary-text-light;
+        border-radius: 30%;
+      }
+    
+      &::-webkit-datetime-edit,
+      &::-webkit-inner-spin-button,
+      &::-webkit-clear-button {
+        color: $primary-text-light;
+      }
     }
+    
 
     .upload-page__title-input {
       font-family: "quicksand";
