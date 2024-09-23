@@ -12,7 +12,7 @@ function Header(props) {
         </Link>
       </div>
       <div className="header__buttons">
-        <Link to="/">
+        <Link to="/photos">
           <button>Home</button>
         </Link>
         <Link to="/gallery">
