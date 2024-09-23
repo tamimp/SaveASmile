@@ -1,6 +1,6 @@
 # Save A Smile
+![Save A Smile](https://github.com/user-attachments/assets/0a3cdfbe-2e67-42d8-b79f-f3801f5e27f6)
 
-## Presentation deck: https://docs.google.com/presentation/d/1KVYrnmxzRoDm5Yy4RkpnglfcrmNOE_ZwULbBcXrcoas/edit?usp=sharing
 
 ## Overview
 
@@ -44,7 +44,7 @@ Deployment: Netlify or Vercel for frontend deployment, AWS or Heroku for backend
 
 ### APIs
 
-n/a
+custom created for each user
 
 ### Sitemap
 
@@ -56,7 +56,8 @@ Description: A page where users can upload an image, write a description, and sa
 
 ### Mockups
 
-Mockup included in folder (/Documentation/mockup.pdf)
+![Save A Smile](https://github.com/user-attachments/assets/dc324f5c-f38e-4a99-b1de-d2482c13f96d)
+
 
 ### Data
 
