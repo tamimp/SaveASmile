@@ -1,8 +1,37 @@
 [
   {
-    "id": "a4351f44-1245-4696-b44c-e98d34e44048",
-    "title": "This is a sample photo. Delete me when you're ready!",
-    "image": "Upload-video-preview.jpg",
-    "timestamp": "2024-09-15"
+    "id": "850102b1-4192-48b1-9cde-eeecf646d0b8",
+    "title": "Meeting up with some BrainStation Pals!",
+    "image": "eggs-944495_1280.jpg",
+    "timestamp": "2024-09-23",
+    "reviews": []
+  },
+  {
+    "id": "2f57b791-3ccf-4a00-8077-7f3a3c13c2ee",
+    "title": "Made myself a yummy salad!",
+    "image": "image2.jpg",
+    "timestamp": "2024-09-03",
+    "reviews": []
+  },
+  {
+    "id": "93f9e41a-0868-49be-8814-c55f90fea577",
+    "title": "Went stargazing :) ",
+    "image": "image6.jpg",
+    "timestamp": "2024-07-10",
+    "reviews": []
+  },
+  {
+    "id": "e548aa25-c879-45e9-aa84-1affc9b562d3",
+    "title": "Took Jennifer for a walk!",
+    "image": "shepherd-dog-4357790_1280.jpg",
+    "timestamp": "2024-09-02",
+    "reviews": []
+  },
+  {
+    "id": "ba56a5e2-1f8c-4439-a0f1-af8aaa66d000",
+    "title": "Visited an art gallery with friends.",
+    "image": "image7.jpg",
+    "timestamp": "2024-09-03",
+    "reviews": []
   }
 ]
