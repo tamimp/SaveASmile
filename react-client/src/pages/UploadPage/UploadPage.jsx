@@ -58,12 +58,12 @@ function UploadPage() {
   };
 
   const handleCancel = () => {
-    navigate("/");
+    navigate("/photos");
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    navigate("/");
+    navigate("/photos");
   };
 
   const handleUploadAnother = () => {
