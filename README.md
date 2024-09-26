@@ -136,3 +136,11 @@ Benefit: Allows users to easily share joyful moments with others.
 Backup and Restore
 Feature: Implement backup and restore functionality for user memories.
 Benefit: Ensures that users can recover their memories in case of data loss.
+
+## To run:
+
+Go ahead and download the main folder. Once you have it, unzip it. Drag in "express-server" and "react-client" folders into your code editor (I use VS code, for example). 
+For back end:  In the terminal for react-client, type in: "npm install", hit enter, then "npm start" and hit enter again.
+For front end: In the terminal for express-server, type in: "npm install", hit enter, then "npm run dev" and hit enter again. Follow the local host link!
+
+
